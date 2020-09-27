@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADIVINA QUIÉN</title>
+
+    <!--CSS-->
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <img class="logo" src="assets/img/Adivina_logo.png" alt="logo">
+        <div class="row d-flex mt-5">
+            <div class="reloj"> <img src="assets/img/clock_1.svg" alt="reloj">
+                <p><span id="countdown" class="timer"></span></p>
+            </div>
+            <div class="puntaje">
+                <p>Puntaje: <input type="number" id="puntos" class="border-0" readonly></p>
+            </div>
+            <div class="usuario">
+                <p>Usuario: <input type="text" id="mostrar" class="usuarios border-0" readonly></p>
+            </div>
+        </div>
+
+
+        <main>
+            <div class="row d-flex justify-content-center mt-5">
+                <div class="mt-1 mr-1">
+                    <button id="foto1" class="button2 prueba" data-toggle="modal" data-target="#exampleModal"></button>
+                </div>
+                <div class="mt-1 mr-1">
+                    <button id="foto2" class="button2" data-toggle="modal" data-target="#exampleModalLong2"></button>
+                </div>
+                <div class="mt-1 mr-1">
+                    <button id="foto3" class="button2" data-toggle="modal" data-target="#exampleModalLong3"></button>
+                </div>
+                <div class="mt-1 mr-1">
+                    <button id="foto4" class="button2" data-toggle="modal" data-target="#exampleModalLong4"></button>
+                </div>
+                <div class="mt-1 mr-1">
+                    <button id="foto5" class="button2" data-toggle="modal" data-target="#exampleModalLong5"></button>
+                </div>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <h1>Adivina...</h1>
+                                <input type="radio" id="joseModal1" name="nombre" value="Jose">
+                                <label for="joseModal1">José</label><br>
+                                <input type="radio" id="paulaModal1" name="nombre" value="Paula">
+                                <label for="paulaModal1">Paula</label><br>
+                                <input type="radio" id="jorgeModal1" name="nombre" value="Jorge">
+                                <label for="jorgeModal1">Jorge</label><br>
+                                <input type="radio" id="haroldModal1" name="nombre" value="Harold">
+                                <label for="haroldModal1">Harold</label><br>
+                                <input type="radio" id="kevinModal1" name="nombre" value="Kevin">
+                                <label for="kevinModal1">Kevin</label><br>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-dark" data-dismiss="modal" id="modal1">Adivinar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <!-- Modal User -->
+    <div class="modal fade" id="myModalUser" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header purple">
+                    <h5 class="modal-title" id="exampleModalLongTitle">¿Cómo se llama tu nombre?</h5>
+                </div>
+                <div class="modal-body">
+                    <input class="form-control" type="text" id="usuario">
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" id="enviar">Enviar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script src=" assets/js/scripts.js "></script>
+
+    <!--Script-->
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+    </script>
+    <script src=" https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
+    </script>
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+    </script>
+    <script src=" https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
+    </script>
+
+</body>
+
+</html>
