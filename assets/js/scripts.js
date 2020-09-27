@@ -1,3 +1,21 @@
+/** Harold: sistema de usuarios improvisado */
+let points = 3;
+let estado = ['inicial', 'inicial', 'exitoso', 'fallido', 'inicial'];
+
+var seconds = 40;
+let partidaUsuario = {
+    nombre: localStorage.getItem('usuario'),
+    puntos: 0,
+    tiempo: 300, //seconds
+    estado: estado
+};
+
+if (localStorage.getItem('partidaUsuario') != null) {
+    seconds = parseInt(JSON.parse(localStorage.getItem('partidaUsuario')).tiempo);
+}
+/** Harold: sistema de usuarios improvisado */
+
+
 var acierto = 0;
 var realizado = 0; //valida si se realizó la seleccion previa de una imagen
 
@@ -79,6 +97,9 @@ var seconds = 20;
 
 function secondPassed() {
     if (usuario.value != '') {
+        partidaUsuario.tiempo = seconds;
+        localStorage.setItem('partidaUsuario', JSON.stringify(partidaUsuario));
+        
         var minutes = Math.round((seconds - 30) / 60);
         var remainingSeconds = seconds % 60;
         if (remainingSeconds < 10) {
@@ -110,3 +131,18 @@ usuarioEnStorage()
 $(function() {
     $("#myModalUser").modal('show');
 });
+
+
+
+
+/** Almacena partidas (Deberia ser cuando se finalice el juego, no antes)*/
+let partidas = [];
+let partidasLS = localStorage.getItem('partidas');
+if (partidasLS != null) {
+    partidas = JSON.parse(partidasLS);
+}
+partidas.push(partidaUsuario);
+localStorage.setItem('partidas', JSON.stringify(partidas));
+
+
+/** Harold: sistema de usuarios improvisado */

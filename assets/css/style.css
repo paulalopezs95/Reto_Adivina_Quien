@@ -125,3 +125,20 @@ main {
     background-color: #0000FF;
     color: white;
 }
+
+
+.text-blue{
+    color: #0000FF;
+}
+
+.bg-blue{
+    background-color: #0000FF;
+}
+
+.border-table{
+    border-radius: 2em;
+}
+
+.button{
+    border-radius: .5em;
+}
