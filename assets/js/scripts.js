@@ -295,5 +295,5 @@ again.onclick = () => {
 }
 
 perfil.onclick = () => {
-    window.location.href = "../../perfiles.html";
+    location.href = "../../perfiles.html";
 }
