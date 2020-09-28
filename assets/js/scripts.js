@@ -93,13 +93,13 @@ enviar.onclick = function usuarios() {
 }
 
 //contador 5 min
-var seconds = 20;
+var seconds = 6;
 
 function secondPassed() {
     if (usuario.value != '') {
         partidaUsuario.tiempo = seconds;
         localStorage.setItem('partidaUsuario', JSON.stringify(partidaUsuario));
-        
+
         var minutes = Math.round((seconds - 30) / 60);
         var remainingSeconds = seconds % 60;
         if (remainingSeconds < 10) {
@@ -109,7 +109,7 @@ function secondPassed() {
         if (seconds == 0) {
             clearInterval(countdownTimer);
             document.getElementById('countdown').innerHTML = "Tiempo Finalizado";
-            $("#myModalUser").modal('show');
+            $("#myModalList").modal('show');
         } else {
             seconds--;
         }
@@ -146,3 +146,8 @@ localStorage.setItem('partidas', JSON.stringify(partidas));
 
 
 /** Harold: sistema de usuarios improvisado */
+
+
+again.onclick = ()=>{
+    location.reload();
+}
