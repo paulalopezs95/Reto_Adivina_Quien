@@ -1,4 +1,3 @@
-
 /** Harold: sistema de usuarios improvisado */
 let points = 3;
 let estado = ['inicial', 'inicial', 'exitoso', 'fallido', 'inicial'];
@@ -20,7 +19,7 @@ if (localStorage.getItem('partidaUsuario') != null) {
 var acierto = 0;
 var realizado = 0; //valida si se realizó la seleccion previa de una imagen
 
-var puntos = document.getElementById('puntos').value = 0;//incializa en 0 el campo puntos
+var puntos = document.getElementById('puntos').value = 0; //incializa en 0 el campo puntos
 var realizado1 = false; //valida si se realizó la seleccion previa de una imagen
 var realizado2 = false;
 var realizado3 = false;
@@ -38,18 +37,15 @@ const imgFoto5 = document.getElementById("foto5");
 //FUNCIONES VALIDACION DE INTENTO EN LAS IMAGENES
 imgFoto1.addEventListener("click", () => {
     imgFoto1.classList.add('photo1');
-    if (realizado1 == false) {
-    } else {
+    if (realizado1 == false) {} else {
         document.getElementById('foto1').disabled = true;
         swal('Intenta con otra imagen!!!')
     }
-    var countdownTimer = setInterval('secondPassed()', 1000);
 });
 
 imgFoto2.addEventListener("click", () => {
     imgFoto2.classList.add('photo2');
-    if (realizado2 == false) {
-    } else {
+    if (realizado2 == false) {} else {
         document.getElementById('foto2').disabled = true;
         swal('Intenta con otra imagen!!!')
     }
@@ -57,8 +53,7 @@ imgFoto2.addEventListener("click", () => {
 
 imgFoto3.addEventListener("click", () => {
     imgFoto3.classList.add('photo3');
-    if (realizado3 == false) {
-    } else {
+    if (realizado3 == false) {} else {
         document.getElementById('foto3').disabled = true;
         swal('Intenta con otra imagen!!!')
     }
@@ -66,8 +61,7 @@ imgFoto3.addEventListener("click", () => {
 
 imgFoto4.addEventListener("click", () => {
     imgFoto4.classList.add('photo4');
-    if (realizado4 == false) {
-    } else {
+    if (realizado4 == false) {} else {
         document.getElementById('foto4').disabled = true;
         swal('Intenta con otra imagen!!!')
     }
@@ -75,36 +69,17 @@ imgFoto4.addEventListener("click", () => {
 
 imgFoto5.addEventListener("click", () => {
     imgFoto5.classList.add('photo5');
-    if (realizado5 == false) {
-    } else {
+    if (realizado5 == false) {} else {
         document.getElementById('foto5').disabled = true;
         swal('Intenta con otra imagen!!!')
     }
 });
 
-//contador 5 min
-var seconds = 300;
-
-function secondPassed() {
-    var minutes = Math.round((seconds - 30) / 60);
-    var remainingSeconds = seconds % 60;
-    if (remainingSeconds < 10) {
-        remainingSeconds = "0" + remainingSeconds;
-    }
-    document.getElementById('countdown').innerHTML = minutes + ":" + remainingSeconds;
-    if (seconds == 0) {
-        clearInterval(countdownTimer);
-        document.getElementById('countdown').innerHTML = "Tiempo Finalizado";
-    } else {
-        seconds--;
-    }
-}
-
 
 //FUNCIONES VALIDACION BOTONES MODAL
 //BOTON MODAL IMG 1
 
-btnModal1.onclick = function () {
+btnModal1.onclick = function() {
     if (document.getElementById('kevinModal1').checked) {
         puntos++;
         console.log(puntos)
@@ -121,7 +96,7 @@ btnModal1.onclick = function () {
     finaliza()
 }
 
-btnModal2.onclick = function () {
+btnModal2.onclick = function() {
     if (document.getElementById('joseModal2').checked) {
         puntos++;
         console.log(puntos)
@@ -138,29 +113,8 @@ btnModal2.onclick = function () {
     finaliza()
 }
 
-//contador 5 min
-var seconds = 6;
 
-function secondPassed() {
-    if (usuario.value != '') {
-        partidaUsuario.tiempo = seconds;
-        localStorage.setItem('partidaUsuario', JSON.stringify(partidaUsuario));
-
-        var minutes = Math.round((seconds - 30) / 60);
-        var remainingSeconds = seconds % 60;
-        if (remainingSeconds < 10) {
-            remainingSeconds = "0" + remainingSeconds;
-        }
-        document.getElementById('countdown').innerHTML = minutes + ":" + remainingSeconds;
-        if (seconds == 0) {
-            clearInterval(countdownTimer);
-            document.getElementById('countdown').innerHTML = "Tiempo Finalizado";
-            $("#myModalList").modal('show');
-        } else {
-            seconds--;
-        }
-
-btnModal3.onclick = function () {
+btnModal3.onclick = function() {
     if (document.getElementById('haroldModal3').checked) {
         puntos++;
         console.log(puntos)
@@ -178,7 +132,7 @@ btnModal3.onclick = function () {
     finaliza()
 }
 
-btnModal4.onclick = function () {
+btnModal4.onclick = function() {
     if (document.getElementById('jorgeModal4').checked) {
         puntos++;
         console.log(puntos)
@@ -195,7 +149,7 @@ btnModal4.onclick = function () {
     finaliza()
 }
 
-btnModal5.onclick = function () {
+btnModal5.onclick = function() {
     if (document.getElementById('paulaModal5').checked) {
         puntos++;
         console.log(puntos)
@@ -212,12 +166,18 @@ btnModal5.onclick = function () {
     finaliza()
 }
 
+function finaliza() {
+    if (realizado1 == true && realizado2 == true && realizado3 == true && realizado4 == true && realizado5 == true) {
+        swal('Realizaste todas las preguntas y lograste ' + puntos + 'puntos')
+            .then((value) => {
+                list();
+            });
 
-$(function() {
-    $("#myModalUser").modal('show');
-});
+    } else {
 
+    }
 
+}
 
 /** Almacena partidas (Deberia ser cuando se finalice el juego, no antes)*/
 let partidas = [];
@@ -232,15 +192,66 @@ localStorage.setItem('partidas', JSON.stringify(partidas));
 /** Harold: sistema de usuarios improvisado */
 
 
-again.onclick = ()=>{
+again.onclick = () => {
     location.reload();
 
-function finaliza(){
-    if(realizado1 == true && realizado2 == true && realizado3 == true && realizado4 == true && realizado5 == true){
-        swal('Realizaste todas las preguntas y lograste ' + puntos + 'puntos');
-        setTimeout(() => window.location = "perfiles.html", 4000);
-    }else{
-        
+}
+
+profile.onclick = () => {
+    window.location("perfiles.html")
+}
+
+/*  Paula: Usuarios */
+
+enviar.onclick = function usuarios() {
+    let usuario = document.getElementById('usuario').value;
+    if (usuario == '') {
+        swal("Queremos saber como se llama tu nombre!");
+    } else {
+        localStorage.setItem('usuario', usuario);
+        swal("Bienvenido " + usuario + "." + "¡Vamos a jugar!")
+        document.getElementById('mostrar').value = usuario;
+        $("#myModalUser").modal('hide');
+    }
+}
+
+/*  Funciones Modal */
+
+$(function() {
+    $("#myModalUser").modal('show');
+});
+
+function list() {
+    $("#myModalList").modal('show');
+}
+
+//contador 5 min
+var seconds = 30;
+
+function secondPassed() {
+    if (usuario.value != '') {
+        partidaUsuario.tiempo = seconds;
+        localStorage.setItem('partidaUsuario', JSON.stringify(partidaUsuario));
+
+        var minutes = Math.round((seconds - 30) / 60);
+        var remainingSeconds = seconds % 60;
+        if (remainingSeconds < 10) {
+            remainingSeconds = "0" + remainingSeconds;
+        }
+        document.getElementById('countdown').innerHTML = minutes + ":" + remainingSeconds;
+        if (seconds == 0) {
+            clearInterval(countdownTimer);
+            document.getElementById('countdown').innerHTML = "Tiempo Finalizado";
+            swal('Se te acabó el tiempo')
+                .then((value) => {
+                    location.reload();
+                });
+
+        } else {
+            seconds--;
+        }
     }
 
 }
+
+var countdownTimer = setInterval('secondPassed()', 1000);
