@@ -10,6 +10,15 @@
     <li>Página extra con perfiles de los integrantes del grupo</li>
 </ul>
 
+<h3>COLABORADORES</h3>
+<ul>
+    <li>Harold Bartolo</li>
+    <li>Kevin Duque</li>
+    <li>Jose Fernelly</li>
+    <li>Jorge Rincón</li>
+    <li>Paula López</li>
+</ul>
+
 
 
 
