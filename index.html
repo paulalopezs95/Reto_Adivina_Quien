@@ -10,15 +10,12 @@
 
     <link rel="stylesheet" href="assets/css/style.css">
     <!--Bootstrap-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 </head>
 
 <body>
-
     <div class="container">
-
         <img class="logo" src="assets/img/Adivina_logo.png" alt="logo">
         <div class="row d-flex mt-5">
             <div class="reloj"> <img src="assets/img/clock_1.svg" alt="reloj">
@@ -27,42 +24,39 @@
             <div class="puntaje">
                 <p>Puntaje: <input type="number" id="puntos" class="border-0" readonly></p>
             </div>
-            <div class="usuario">
-                <p>Usuario: <input type="text" id="mostrar" class="usuarios border-0" readonly></p>
-            </div>
         </div>
-
 
         <main>
             <div class="row d-flex justify-content-center mt-5">
-                <div class="mt-1 mr-1">
-                    <button id="foto1" class="button2 prueba" data-toggle="modal" data-target="#exampleModal"></button>
+                <div class="mt-1 mr-1 fotos">
+                    <button id="foto1" class="button2" data-toggle="modal" data-target="#Modal-1"></button>
                 </div>
-                <div class="mt-1 mr-1">
-                    <button id="foto2" class="button2" data-toggle="modal" data-target="#exampleModalLong2"></button>
+                <div class="mt-1 mr-1 fotos">
+                    <button id="foto2" class="button2" data-toggle="modal" data-target="#Modal-2"></button>
                 </div>
-                <div class="mt-1 mr-1">
-                    <button id="foto3" class="button2" data-toggle="modal" data-target="#exampleModalLong3"></button>
+                <div class="mt-1 mr-1 fotos">
+                    <button id="foto3" class="button2" data-toggle="modal" data-target="#Modal-3"></button>
                 </div>
-                <div class="mt-1 mr-1">
-                    <button id="foto4" class="button2" data-toggle="modal" data-target="#exampleModalLong4"></button>
+                <div class="mt-1 mr-1 fotos">
+                    <button id="foto4" class="button2" data-toggle="modal" data-target="#Modal-4"></button>
                 </div>
-                <div class="mt-1 mr-1">
-                    <button id="foto5" class="button2" data-toggle="modal" data-target="#exampleModalLong5"></button>
+                <div class="mt-1 mr-1 fotos">
+                    <button id="foto5" class="button2" data-toggle="modal" data-target="#Modal-5"></button>
                 </div>
 
-                <!-- Modal -->
-                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <!-- Modal-1 -->
+                <div class="modal fade " id="Modal-1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
-                            <div class="modal-header">
+                            <!--<div class="modal-header">
                                 <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
-                            </div>
+                            </div> -->
                             <div class="modal-body">
-                                <h1>Adivina...</h1>
+                                <h2>Adivina...</h2>
                                 <input type="radio" id="joseModal1" name="nombre" value="Jose">
                                 <label for="joseModal1">José</label><br>
                                 <input type="radio" id="paulaModal1" name="nombre" value="Paula">
@@ -73,38 +67,164 @@
                                 <label for="haroldModal1">Harold</label><br>
                                 <input type="radio" id="kevinModal1" name="nombre" value="Kevin">
                                 <label for="kevinModal1">Kevin</label><br>
+                                <input type="radio" id="carlosModal1" name="nombre" value="Carlos">
+                                <label for="carlosModal1">Carlos</label><br>
+                                <input type="radio" id="sandra2Modal1" name="nombre" value="Sandra">
+                                <label for="sandraModal1">Sandra</label><br>
+                                <input type="radio" id="andresModal1" name="nombre" value="Andres">
+                                <label for="andresModal1">Andrés</label><br>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-dark" data-dismiss="modal" id="modal1">Adivinar</button>
+                                <button type="button" class="btn btn-dark" data-dismiss="modal"
+                                    id="btnModal1">Adivinar</button>
                             </div>
                         </div>
                     </div>
                 </div>
+                <!-- end modal 1 -->
 
+
+                <!-- Modal-2 -->
+                <div class="modal fade " id="Modal-2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+
+                            <div class="modal-body">
+                                <h2>Adivina...</h2>
+                                <input type="radio" id="joseModal2" name="nombre" value="Jose">
+                                <label for="joseModal2">José</label><br>
+                                <input type="radio" id="paulaModal2" name="nombre" value="Paula">
+                                <label for="paulaModal2">Paula</label><br>
+                                <input type="radio" id="jorgeModal2" name="nombre" value="Jorge">
+                                <label for="jorgeModal2">Jorge</label><br>
+                                <input type="radio" id="haroldModal2" name="nombre" value="Harold">
+                                <label for="haroldModal2">Harold</label><br>
+                                <input type="radio" id="kevinModal2" name="nombre" value="Kevin">
+                                <label for="kevinModal2">Kevin</label><br>
+                                <input type="radio" id="carlosModal2" name="nombre" value="Carlos">
+                                <label for="carlosModal2">Carlos</label><br>
+                                <input type="radio" id="sandra2Modal2" name="nombre" value="Sandra">
+                                <label for="sandra2Modal2">Sandra</label><br>
+                                <input type="radio" id="andresModal2" name="nombre" value="Andres">
+                                <label for="andresModal2">Andrés</label><br>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-dark" data-dismiss="modal"
+                                    id="btnModal2">Adivinar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end modal 2 -->
+
+                <!-- Modal-3 -->
+                <div class="modal fade " id="Modal-3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+
+                            <div class="modal-body">
+                                <h2>Adivina...</h2>
+                                <input type="radio" id="joseModal3" name="nombre" value="Jose">
+                                <label for="joseModal3">José</label><br>
+                                <input type="radio" id="paulaModal3" name="nombre" value="Paula">
+                                <label for="paulaModal3">Paula</label><br>
+                                <input type="radio" id="jorgeModal3" name="nombre" value="Jorge">
+                                <label for="jorgeModal3">Jorge</label><br>
+                                <input type="radio" id="haroldModal3" name="nombre" value="Harold">
+                                <label for="haroldModal3">Harold</label><br>
+                                <input type="radio" id="kevinModal3" name="nombre" value="Kevin">
+                                <label for="kevinModal3">Kevin</label><br>
+                                <input type="radio" id="carlosModal3" name="nombre" value="Carlos">
+                                <label for="carlosModal3">Carlos</label><br>
+                                <input type="radio" id="sandra2Modal3" name="nombre" value="Sandra">
+                                <label for="sandra2Modal3">Sandra</label><br>
+                                <input type="radio" id="andresModal3" name="nombre" value="Andres">
+                                <label for="andresModal3">Andrés</label><br>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-dark" data-dismiss="modal"
+                                    id="btnModal3">Adivinar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end modal 3 -->
+
+                <!-- Modal-4 -->
+                <div class="modal fade " id="Modal-4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+
+                            <div class="modal-body">
+                                <h2>Adivina...</h2>
+                                <input type="radio" id="joseModal4" name="nombre" value="Jose">
+                                <label for="joseModal4">José</label><br>
+                                <input type="radio" id="paulaModal4" name="nombre" value="Paula">
+                                <label for="paulaModal4">Paula</label><br>
+                                <input type="radio" id="jorgeModal4" name="nombre" value="Jorge">
+                                <label for="jorgeModal4">Jorge</label><br>
+                                <input type="radio" id="haroldModal4" name="nombre" value="Harold">
+                                <label for="haroldModal4">Harold</label><br>
+                                <input type="radio" id="kevinModal4" name="nombre" value="Kevin">
+                                <label for="kevinModal4">Kevin</label><br>
+                                <input type="radio" id="carlosModal4" name="nombre" value="Carlos">
+                                <label for="carlosModal4">Carlos</label><br>
+                                <input type="radio" id="sandra2Modal4" name="nombre" value="Sandra">
+                                <label for="sandra2Modal4">Sandra</label><br>
+                                <input type="radio" id="andresModal4" name="nombre" value="Andres">
+                                <label for="andresModal4">Andrés</label><br>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-dark" data-dismiss="modal"
+                                    id="btnModal4">Adivinar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end modal 4 -->
+
+                <!-- Modal-5 -->
+                <div class="modal fade " id="Modal-5" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+
+                            <div class="modal-body">
+                                <h2>Adivina...</h2>
+                                <input type="radio" id="joseModal5" name="nombre" value="Jose">
+                                <label for="joseModal5">José</label><br>
+                                <input type="radio" id="paulaModal5" name="nombre" value="Paula">
+                                <label for="paulaModal5">Paula</label><br>
+                                <input type="radio" id="jorgeModal5" name="nombre" value="Jorge">
+                                <label for="jorgeModal5">Jorge</label><br>
+                                <input type="radio" id="haroldModal5" name="nombre" value="Harold">
+                                <label for="haroldModal5">Harold</label><br>
+                                <input type="radio" id="kevinModal5" name="nombre" value="Kevin">
+                                <label for="kevinModal5">Kevin</label><br>
+                                <input type="radio" id="carlosModal5" name="nombre" value="Carlos">
+                                <label for="carlosModal5">Carlos</label><br>
+                                <input type="radio" id="sandra2Modal5" name="nombre" value="Sandra">
+                                <label for="sandra2Modal5">Sandra</label><br>
+                                <input type="radio" id="andresModal5" name="nombre" value="Andres">
+                                <label for="andresModal5">Andrés</label><br>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-dark" data-dismiss="modal"
+                                    id="btnModal5">Adivinar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end modal 5 -->
 
             </div>
 
         </main>
 
     </div>
-
-    <!-- Modal User -->
-    <div class="modal fade" id="myModalUser" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header purple">
-                    <h5 class="modal-title" id="exampleModalLongTitle">¿Cómo se llama tu nombre?</h5>
-                </div>
-                <div class="modal-body">
-                    <input class="form-control" type="text" id="usuario">
-                </div>
-                <div class="modal-footer">
-                    <button class="btn btn-primary" id="enviar">Enviar</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
 
 
 
@@ -113,20 +233,27 @@
     <!--Script-->
 
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
-    </script>
-    <script src=" https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
-    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+        </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+        </script>
+    <script src=" https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
+        </script>
+
 
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
-    </script>
-    <script src=" https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
-    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+        </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+        </script>
+    <script src=" https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
+        </script>
 
 </body>
 

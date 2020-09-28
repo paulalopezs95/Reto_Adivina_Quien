@@ -11,20 +11,36 @@ main {
     padding: 5px 20px 30px 20px;
 }
 
+.fotos {
+    height: 150px;
+    width: 150px;
+    /* border: #fff solid 1px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .button2 {
+    transition:all 1s;
     background-color: black;
     border: none;
     color: white;
-    padding: 20px;
     text-align: center;
     text-decoration: none;
     font-size: 16px;
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
 }
 
 .button2::after {
     content: "?";
+    color: whitesmoke;
+    font-size: 3em;
+}
+
+.button2::before {
+    content: "";
 }
 
 .photo1 {
@@ -32,7 +48,85 @@ main {
     height: 150px;
     width: 150px;
     background-size: cover;
+    transition:all 1s;
 }
+
+#foto1:hover {
+    transition:all 1s;
+    background-image: url("../img/foto1.png");
+    height: 150px;
+    width: 150px;
+    background-size: cover;
+}
+
+.photo2 {
+    background-image: url("../img/foto2.png");
+    height: 150px;
+    width: 150px;
+    background-size: cover;
+    transition:all 1s;
+}
+
+#foto2:hover {
+    transition:all 1s;
+    background-image: url("../img/foto2.png");
+    height: 150px;
+    width: 150px;
+    background-size: cover;
+}
+
+.photo3 {
+    background-image: url("../img/foto3.png");
+    height: 150px;
+    width: 150px;
+    background-size: cover;
+    transition:all 1s;
+}
+
+#foto3:hover {
+    transition:all 1s;
+    background-image: url("../img/foto3.png");
+    height: 150px;
+    width: 150px;
+    background-size: cover;
+}
+
+.photo4 {
+    background-image: url("../img/foto4.png");
+    height: 150px;
+    width: 150px;
+    background-size: cover;
+    transition:all 1s;
+}
+
+#foto4:hover {
+    transition:all 1s;
+    background-image: url("../img/foto4.png");
+    height: 150px;
+    width: 150px;
+    background-size: cover;
+}
+
+.photo5 {
+    background-image: url("../img/foto5.png");
+    height: 150px;
+    width: 150px;
+    background-size: cover;
+    transition:all 1s;
+}
+
+#foto5:hover {
+    transition:all 1s;
+    background-image: url("../img/foto5.png");
+    height: 150px;
+    width: 150px;
+    background-size: cover;
+}
+
+
+
+/* 
+
 
 .photo1::before {
     color: rgb(255, 255, 255);
@@ -66,7 +160,7 @@ main {
     width: 150px;
     background-size: cover;
 }
-
+ */
 .logo {
     width: 50%;
     height: auto;
@@ -91,23 +185,6 @@ main {
     font-size: 30px;
 }
 
-.usuario {
-    display: flex;
-    margin: auto;
-    float: right;
-    width: 300px;
-    height: auto;
-    background-color: #0000FF;
-    border-radius: 5px;
-    color: white;
-    font-size: 30px;
-}
-
-.usuarios {
-    width: 150px;
-    font-size: 30px;
-}
-
 .reloj {
     display: flex;
     float: left;
@@ -121,7 +198,10 @@ main {
     height: auto;
 }
 
-.purple {
-    background-color: #0000FF;
-    color: white;
+.correcto {
+    border: rgb(50, 233, 50) solid .3em;
+}
+
+.incorrecto {
+    border: red solid .3em;
 }
