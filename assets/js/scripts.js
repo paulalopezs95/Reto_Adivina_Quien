@@ -41,7 +41,6 @@ imgFoto1.addEventListener("click", () => {
         document.getElementById('foto1').disabled = true;
         swal('Intenta con otra imagen!!!')
     }
-    var countdownTimer = setInterval('secondPassed()', 1000);
 });
 
 imgFoto2.addEventListener("click", () => {
@@ -75,24 +74,6 @@ imgFoto5.addEventListener("click", () => {
         swal('Intenta con otra imagen!!!')
     }
 });
-
-//contador 5 min
-var seconds = 300;
-
-function secondPassed() {
-    var minutes = Math.round((seconds - 30) / 60);
-    var remainingSeconds = seconds % 60;
-    if (remainingSeconds < 10) {
-        remainingSeconds = "0" + remainingSeconds;
-    }
-    document.getElementById('countdown').innerHTML = minutes + ":" + remainingSeconds;
-    if (seconds == 0) {
-        clearInterval(countdownTimer);
-        document.getElementById('countdown').innerHTML = "Tiempo Finalizado";
-    } else {
-        seconds--;
-    }
-}
 
 
 //FUNCIONES VALIDACION BOTONES MODAL
@@ -132,29 +113,6 @@ btnModal2.onclick = function() {
     finaliza()
 }
 
-//contador 5 min
-var seconds = 6;
-
-function secondPassed() {
-    if (usuario.value != '') {
-        partidaUsuario.tiempo = seconds;
-        localStorage.setItem('partidaUsuario', JSON.stringify(partidaUsuario));
-
-        var minutes = Math.round((seconds - 30) / 60);
-        var remainingSeconds = seconds % 60;
-        if (remainingSeconds < 10) {
-            remainingSeconds = "0" + remainingSeconds;
-        }
-        document.getElementById('countdown').innerHTML = minutes + ":" + remainingSeconds;
-        if (seconds == 0) {
-            clearInterval(countdownTimer);
-            document.getElementById('countdown').innerHTML = "Tiempo Finalizado";
-            $("#myModalList").modal('show');
-        } else {
-            seconds--;
-        }
-    }
-}
 
 btnModal3.onclick = function() {
     if (document.getElementById('haroldModal3').checked) {
@@ -208,12 +166,17 @@ btnModal5.onclick = function() {
     finaliza()
 }
 
+function finaliza() {
+    if (realizado1 == true && realizado2 == true && realizado3 == true && realizado4 == true && realizado5 == true) {
+        swal('Realizaste todas las preguntas y lograste ' + puntos + ' puntos')
+            .then((value) => {
+                list();
+            });
+    } else {
 
-$(function() {
-    $("#myModalUser").modal('show');
-});
+    }
 
-
+}
 
 /** Almacena partidas (Deberia ser cuando se finalice el juego, no antes)*/
 let partidas = [];
@@ -231,16 +194,13 @@ localStorage.setItem('partidas', JSON.stringify(partidas));
 again.onclick = () => {
     location.reload();
 
-    function finaliza() {
-        if (realizado1 == true && realizado2 == true && realizado3 == true && realizado4 == true && realizado5 == true) {
-            swal('Realizaste todas las preguntas y lograste ' + puntos + 'puntos');
-            setTimeout(() => window.location = "perfiles.html", 4000);
-        } else {
+}
 
-        }
+perfil.onclick = () => {
+    window.location.href = "../../perfiles.html";
+}
 
-    }
-} /*  Paula: Validación Usuario */
+/*  Paula: Usuarios */
 
 enviar.onclick = function usuarios() {
     let usuario = document.getElementById('usuario').value;
@@ -253,3 +213,44 @@ enviar.onclick = function usuarios() {
         $("#myModalUser").modal('hide');
     }
 }
+
+/*  Funciones Modal */
+
+$(function() {
+    $("#myModalUser").modal('show');
+});
+
+function list() {
+    $("#myModalList").modal('show');
+}
+
+//contador 5 min
+var seconds = 30;
+
+function secondPassed() {
+    if (usuario.value != '') {
+        partidaUsuario.tiempo = seconds;
+        localStorage.setItem('partidaUsuario', JSON.stringify(partidaUsuario));
+
+        var minutes = Math.round((seconds - 30) / 60);
+        var remainingSeconds = seconds % 60;
+        if (remainingSeconds < 10) {
+            remainingSeconds = "0" + remainingSeconds;
+        }
+        document.getElementById('countdown').innerHTML = minutes + ":" + remainingSeconds;
+        if (seconds == 0) {
+            clearInterval(countdownTimer);
+            document.getElementById('countdown').innerHTML = "Tiempo Finalizado";
+            swal('Se te acabó el tiempo')
+                .then((value) => {
+                    location.reload();
+                });
+
+        } else {
+            seconds--;
+        }
+    }
+
+}
+
+var countdownTimer = setInterval('secondPassed()', 1000);

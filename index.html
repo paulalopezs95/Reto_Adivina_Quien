@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <!--Bootstrap-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 </head>
 
 <body>
@@ -22,6 +23,9 @@
             </div>
             <div class="puntaje">
                 <p>Puntaje: <input type="number" id="puntos" class="border-0" readonly></p>
+            </div>
+            <div class="usuario">
+                <p>Usuario: <input type="text" id="mostrar" class="usuarios border-0" readonly></p>
             </div>
         </div>
 
@@ -44,7 +48,7 @@
                 </div>
 
                 <!-- Modal-1 -->
-                <div class="modal fade " id="Modal-1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal fade" id="Modal-1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <!--<div class="modal-header">
@@ -212,24 +216,6 @@
             </div>
 
 
-            <!-- Modal User -->
-            <div class="modal fade" id="myModalUser" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header purple">
-                            <h5 class="modal-title" id="exampleModalLongTitle">¿Cómo se llama tu nombre?</h5>
-                        </div>
-                        <div class="modal-body">
-                            <input class="form-control" type="text" id="usuario">
-                        </div>
-                        <div class="modal-footer">
-                            <button class="btn btn-primary" id="enviar">Enviar</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
             <!-- Modal List -->
             <div class="modal fade" id="myModalList" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                 <div class="modal-dialog-sm modal-dialog-centered" role="document">
@@ -260,7 +246,24 @@
                         </div>
                         <div class="modal-footer">
                             <button class="btn btn-primary" id="again">Volver a Jugar</button>
-                            <button class="btn btn-primary" id="profile">Ver Perfiles</button>
+                            <button class="btn btn-primary" id="perfil">Ver Perfiles</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal User -->
+            <div class="modal fade" id="myModalUser" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header purple">
+                            <h5 class="modal-title" id="exampleModalLongTitle">¿Cómo se llama tu nombre?</h5>
+                        </div>
+                        <div class="modal-body">
+                            <input class="form-control" type="text" id="usuario">
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-primary" id="enviar">Enviar</button>
                         </div>
                     </div>
                 </div>
@@ -272,7 +275,7 @@
 
 
 
-
+    <script src=" assets/js/puntuacion.js "></script>
     <script src=" assets/js/scripts.js "></script>
 
     <!--Script-->
