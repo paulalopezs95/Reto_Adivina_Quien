@@ -1,5 +1,5 @@
 <h1>RETO ADIVINA QUIEN :rocket: </h1>
-<h3>ESPECIFICACIONES</h3>
+<h3>ESPECIFICACIONES :bookmark_tabs:</h3>
 
 <ul>
     <li>Usar fotos reales de integrantes del equipo</li>
@@ -10,7 +10,7 @@
     <li>Página extra con perfiles de los integrantes del grupo</li>
 </ul>
 
-<h3>COLABORADORES</h3>
+<h3>COLABORADORES :computer:</h3>
 <ul>
     <li>Harold Bartolo</li>
     <li>Kevin Duque</li>
