@@ -14,7 +14,7 @@
 <ul>
     <li>Harold Bartolo</li>
     <li>Kevin Duque</li>
-    <li>Jose Fernelly</li>
+    <li>José Fernelly</li>
     <li>Jorge Rincón</li>
     <li>Paula López</li>
 </ul>
