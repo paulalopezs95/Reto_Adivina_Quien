@@ -198,10 +198,33 @@ main {
     height: auto;
 }
 
+
+.purple {
+    background-color: #0000FF;
+    color: white;
+}
+
+
+.text-blue{
+    color: #0000FF;
+}
+
+.bg-blue{
+    background-color: #0000FF;
+}
+
+.border-table{
+    border-radius: 2em;
+}
+
+.button{
+    border-radius: .5em;
+
 .correcto {
     border: rgb(50, 233, 50) solid .3em;
 }
 
 .incorrecto {
     border: red solid .3em;
+
 }

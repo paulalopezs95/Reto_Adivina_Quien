@@ -1,3 +1,25 @@
+
+/** Harold: sistema de usuarios improvisado */
+let points = 3;
+let estado = ['inicial', 'inicial', 'exitoso', 'fallido', 'inicial'];
+
+var seconds = 40;
+let partidaUsuario = {
+    nombre: localStorage.getItem('usuario'),
+    puntos: 0,
+    tiempo: 300, //seconds
+    estado: estado
+};
+
+if (localStorage.getItem('partidaUsuario') != null) {
+    seconds = parseInt(JSON.parse(localStorage.getItem('partidaUsuario')).tiempo);
+}
+/** Harold: sistema de usuarios improvisado */
+
+
+var acierto = 0;
+var realizado = 0; //valida si se realizó la seleccion previa de una imagen
+
 var puntos = document.getElementById('puntos').value = 0;//incializa en 0 el campo puntos
 var realizado1 = false; //valida si se realizó la seleccion previa de una imagen
 var realizado2 = false;
@@ -5,6 +27,7 @@ var realizado3 = false;
 var realizado4 = false;
 var realizado5 = false;
 var count = 0;
+
 
 const imgFoto1 = document.getElementById("foto1");
 const imgFoto2 = document.getElementById("foto2");
@@ -115,6 +138,28 @@ btnModal2.onclick = function () {
     finaliza()
 }
 
+//contador 5 min
+var seconds = 6;
+
+function secondPassed() {
+    if (usuario.value != '') {
+        partidaUsuario.tiempo = seconds;
+        localStorage.setItem('partidaUsuario', JSON.stringify(partidaUsuario));
+
+        var minutes = Math.round((seconds - 30) / 60);
+        var remainingSeconds = seconds % 60;
+        if (remainingSeconds < 10) {
+            remainingSeconds = "0" + remainingSeconds;
+        }
+        document.getElementById('countdown').innerHTML = minutes + ":" + remainingSeconds;
+        if (seconds == 0) {
+            clearInterval(countdownTimer);
+            document.getElementById('countdown').innerHTML = "Tiempo Finalizado";
+            $("#myModalList").modal('show');
+        } else {
+            seconds--;
+        }
+
 btnModal3.onclick = function () {
     if (document.getElementById('haroldModal3').checked) {
         puntos++;
@@ -125,6 +170,7 @@ btnModal3.onclick = function () {
     } else {
         swal('Qué mal! tienes que conocer más a tus compañeros');
         imgFoto3.classList.add('incorrecto')
+
     }
     imgFoto3.classList.remove('button2')
     imgFoto3.classList.add('photo3');
@@ -166,6 +212,29 @@ btnModal5.onclick = function () {
     finaliza()
 }
 
+
+$(function() {
+    $("#myModalUser").modal('show');
+});
+
+
+
+/** Almacena partidas (Deberia ser cuando se finalice el juego, no antes)*/
+let partidas = [];
+let partidasLS = localStorage.getItem('partidas');
+if (partidasLS != null) {
+    partidas = JSON.parse(partidasLS);
+}
+partidas.push(partidaUsuario);
+localStorage.setItem('partidas', JSON.stringify(partidas));
+
+
+/** Harold: sistema de usuarios improvisado */
+
+
+again.onclick = ()=>{
+    location.reload();
+
 function finaliza(){
     if(realizado1 == true && realizado2 == true && realizado3 == true && realizado4 == true && realizado5 == true){
         swal('Realizaste todas las preguntas y lograste ' + puntos + 'puntos');
@@ -173,4 +242,5 @@ function finaliza(){
     }else{
         
     }
+
 }
